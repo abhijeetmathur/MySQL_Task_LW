@@ -1,0 +1,35 @@
+CREATE DATABASE company;
+
+CREATE TABLE employees (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50),
+    position VARCHAR(50),
+    salary NUMERIC(10, 2),
+    hire_date DATE
+);
+
+
+
+INSERT INTO employees (name, position, salary, hire_date)
+VALUES
+('John Doe', 'Software Engineer', 75000.00, '2023-06-01'),
+('Jane Smith', 'Data Analyst', 68000.00, '2022-08-15'),
+('Mike Brown', 'Project Manager', 85000.00, '2021-09-23'),
+('Anna White', 'UX Designer', 70000.00, '2023-02-12'),
+('Sam Wilson', 'DevOps Engineer', 78000.00, '2022-11-19');
+
+
+
+SELECT * FROM employees;
+
+SELECT name, position FROM employees;
+
+UPDATE employees
+SET salary = 72000.00
+WHERE name = 'Jane Smith';
+
+SELECT * FROM employees
+WHERE salary > 75000.00;
+
+DELETE FROM employees
+WHERE name = 'Mike Brown';
